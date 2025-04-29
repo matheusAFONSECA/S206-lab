@@ -36,6 +36,43 @@ describe('Cenários de testes', () => {
 
   })
 
+  it('Login com senha errada', () => {
+
+    let info = register()
+    let senha_errada = info[1] + 'Errada'
+
+    cy.get('#username').type(info[0])
+    cy.get('#password').type(senha_errada)
+    cy.get('.btn-primary').click()
+    cy.get('.ng-binding').should('contain.text', 'Username or password is incorrect')
+
+  })
+
+  it('Login com usuário errado', () => {
+    
+    let info = register()
+    let user_errado = info[0] + 'Errada'
+
+    cy.get('#username').type(user_errado)
+    cy.get('#password').type(info[1])
+    cy.get('.btn-primary').click()
+    cy.get('.ng-binding').should('contain.text', 'Username or password is incorrect')
+
+  })
+
+  it('Login após usuário ser deletado', () => {
+
+    let info = register_login()
+
+    cy.get('.ng-binding > a').click()
+    cy.get('.btn').click()
+    cy.get('#username').type(info[0])
+    cy.get('#password').type(info[1])
+    cy.get('.btn-primary').click()
+    cy.get('.ng-binding').should('contain.text', 'Username or password is incorrect')
+
+  })
+
 })
 
 function register(){
@@ -58,4 +95,16 @@ function register(){
   cy.get('.ng-binding').should('contain.text', 'Registration successful')
 
   return user
+}
+
+function register_login(){
+
+  let info = register()
+
+  cy.get('#username').type(info[0])
+  cy.get('#password').type(info[1])
+  cy.get('.btn-primary').click()
+  cy.get('h1.ng-binding').should('contain.text', info[0])
+
+  return info
 }
