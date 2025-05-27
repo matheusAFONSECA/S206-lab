@@ -1,0 +1,195 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 6,
+    "passes": 6,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-05-27T18:14:56.214Z",
+    "end": "2025-05-27T18:15:29.233Z",
+    "duration": 33019,
+    "testsRegistered": 6,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "c908a737-1b5d-433d-abd9-58a2aef37e3d",
+      "title": "",
+      "fullFile": "cypress\\e2e\\relatorio2.cy.js",
+      "file": "cypress\\e2e\\relatorio2.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "81f178d4-23cb-4813-8357-09dbd2fbbdec",
+          "title": "Cenários de testes",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Realizar um registro com sucesso ",
+              "fullTitle": "Cenários de testes Realizar um registro com sucesso ",
+              "timedOut": null,
+              "duration": 4682,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://globalsqa.com/angularJs-protractor/registration-login-example/#/login');\ncy.get('.btn-link').click();\ncy.get('#firstName').type('matheus');\ncy.get('#Text1').type('matheus');\ncy.get('#username').type('matheus');\ncy.get('#password').type('matheus');\ncy.get('.btn-primary').click();\ncy.get('.ng-binding').should('contain.text', 'Registration successful');",
+              "err": {},
+              "uuid": "c45c8bf1-3210-4b38-b87f-9b9dee23ba0a",
+              "parentUUID": "81f178d4-23cb-4813-8357-09dbd2fbbdec",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Falha de registro por falta de info",
+              "fullTitle": "Cenários de testes Falha de registro por falta de info",
+              "timedOut": null,
+              "duration": 1853,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://globalsqa.com/angularJs-protractor/registration-login-example/#/register');\ncy.get('#firstName').type('matheus');\ncy.get('#Text1').type('matheus');\ncy.get('#username').type('matheus');\ncy.get('.btn-primary').should('be.disabled');",
+              "err": {},
+              "uuid": "b8244d8e-db12-4713-8571-67aa98ebf92d",
+              "parentUUID": "81f178d4-23cb-4813-8357-09dbd2fbbdec",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Login com sucesso",
+              "fullTitle": "Cenários de testes Login com sucesso",
+              "timedOut": null,
+              "duration": 5414,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "let info = register();\ncy.get('#username').type(info[0]);\ncy.get('#password').type(info[1]);\ncy.get('.btn-primary').click();\ncy.get('h1.ng-binding').should('contain.text', info[0]);",
+              "err": {},
+              "uuid": "9475d9ed-40c1-4e0b-ba7e-07bfca801051",
+              "parentUUID": "81f178d4-23cb-4813-8357-09dbd2fbbdec",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Login com senha errada",
+              "fullTitle": "Cenários de testes Login com senha errada",
+              "timedOut": null,
+              "duration": 4973,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "let info = register();\nlet senha_errada = info[1] + 'Errada';\ncy.get('#username').type(info[0]);\ncy.get('#password').type(senha_errada);\ncy.get('.btn-primary').click();\ncy.get('.ng-binding').should('contain.text', 'Username or password is incorrect');",
+              "err": {},
+              "uuid": "3685b7ac-7852-4442-8673-ac57070937da",
+              "parentUUID": "81f178d4-23cb-4813-8357-09dbd2fbbdec",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Login com usuário errado",
+              "fullTitle": "Cenários de testes Login com usuário errado",
+              "timedOut": null,
+              "duration": 4979,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "let info = register();\nlet user_errado = info[0] + 'Errada';\ncy.get('#username').type(user_errado);\ncy.get('#password').type(info[1]);\ncy.get('.btn-primary').click();\ncy.get('.ng-binding').should('contain.text', 'Username or password is incorrect');",
+              "err": {},
+              "uuid": "d780e49c-204e-4020-8546-d9a019d66d68",
+              "parentUUID": "81f178d4-23cb-4813-8357-09dbd2fbbdec",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Login após usuário ser deletado",
+              "fullTitle": "Cenários de testes Login após usuário ser deletado",
+              "timedOut": null,
+              "duration": 6991,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "let info = register_login();\ncy.get('.ng-binding > a').click();\ncy.get('.btn').click();\ncy.get('#username').type(info[0]);\ncy.get('#password').type(info[1]);\ncy.get('.btn-primary').click();\ncy.get('.ng-binding').should('contain.text', 'Username or password is incorrect');",
+              "err": {},
+              "uuid": "a92f73ac-2b73-4ef3-a6ea-7920d839b5e8",
+              "parentUUID": "81f178d4-23cb-4813-8357-09dbd2fbbdec",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "c45c8bf1-3210-4b38-b87f-9b9dee23ba0a",
+            "b8244d8e-db12-4713-8571-67aa98ebf92d",
+            "9475d9ed-40c1-4e0b-ba7e-07bfca801051",
+            "3685b7ac-7852-4442-8673-ac57070937da",
+            "d780e49c-204e-4020-8546-d9a019d66d68",
+            "a92f73ac-2b73-4ef3-a6ea-7920d839b5e8"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 28892,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": null,
+      "version": "6.2.0"
+    }
+  }
+}
