@@ -1,0 +1,17 @@
+- Install cypress:
+npm install cypress --save-dev
+
+- Initialize cypress:
+./node_modules/.bin/cypress open
+
+- Run cypress:
+npx cypress run
+
+- Dependencies installed:
+npm fund
+
+- Install mochawesome:
+npm i cypress-mochawesome-reporter
+
+- Run mochawesome:
+npx cypress run --reporter mochawesome
